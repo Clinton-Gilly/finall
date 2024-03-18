@@ -1,0 +1,22 @@
+body{
+    font-size: 12px;
+    line-height: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #1a1919;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.products {
+    
+    margin: 5px;
+    float: left;
+    font-size: 16px;
+    color: #04ff19;
+    font-weight: bold;
+    text-align: center;
+}

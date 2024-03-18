@@ -1,0 +1,31 @@
+img {
+    padding: 6px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-inline-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.products {
+    
+    margin: 5px;
+    float: left;
+    font-size: 16px;
+    color: #04ff19;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cleaner {
+    clear: both;
+    height: 1px;
+    font-size: 1px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
