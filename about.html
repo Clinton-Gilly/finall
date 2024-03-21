@@ -44,16 +44,16 @@
 
                                 <ul class = "navbar-nav d-flex align-items-center">
                                     <li class = "nav-item">
-                                        <a href = "main.html" class = "nav-link text-white nav-active text-nowrap">Home</a>
+                                        <a href = "index.html" class = "nav-link text-white nav-active text-nowrap">Home</a>
                                     </li>
                                     <li class = "nav-item">
                                         <a href = "about.html" class = "nav-link text-white text-nowrap">About Us</a>
                                     </li>
+                                   
+                                   
                                     <li class = "nav-item">
                                         <a href = "product.html" class = "nav-link text-white text-nowrap">Products</a>
                                     </li>
-                                    
-                                   
                                     <li class = "nav-item">
                                         <a href = "Get.html" class = "nav-link text-white text-nowrap">GET IN TOUCH</a>
                                     </li>
@@ -64,12 +64,14 @@
                 </nav>
 
                
+            <!-- end of header -->
+
             <main>
-                <section class = "sc-services">
-                    <div class = "services-shape">
+                <section class="sc-services">
+                    <div class="services-shape">
                         
                     </div>
-                    <div class="about-box">
+                    <div class="about-box box">
                         <h2>About Us</h2>
                         <div class="about">
                             <p>Selisco Limited is a vibrant and dynamic company specializing in the provision <br>
@@ -81,7 +83,7 @@
                         </div>
                     </div>
                     
-                    <div class="mission-box">
+                    <div class="mission-box box">
                         <h2>Mission</h2>
                         <div class="mission">
                             <p> Our mission at Selisco Limited is clear: to ensure the availability of high-quality 
@@ -92,7 +94,7 @@
                         </div>
                     </div>
                     
-                    <div class="vision-box">
+                    <div class="vision-box box">
                         <h2>Vision</h2>
                         <div class="vision">
                             <p>Our vision at Selisco Limited is to emerge as the premier supplier of top-quality <br>
@@ -104,7 +106,22 @@
                                 delivery in our region.</p>
                         </div>
                     </div>
-                   
+                </section>
+            </main>
+            
+                </section>
+
+                <section>
+                    
+                </section>
+
+             
+
+                <section>
+                    
+                </section>
+
+                
             </main>
 
             <footer class = "footer">
@@ -146,10 +163,9 @@
                                     <li><a href = "#">Contact support</a></li>
                                     <li><a href = "#">Instructions</a></li>
                                     <li><a href = "#">How it works</a></li>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
+
+
+                                    <br><br><br><br>
                                     <p>SCAN ME</p>
                                     <img class="code" src="assets/images/QR Code (1).png" alt="">
                                 </ul>
@@ -170,7 +186,70 @@
         </div>
         
 
+<script>
+    $(document).ready(function(){
+    $('.feedback-slider').owlCarousel({
+        loop: false,
+        margin: 10,
+        nav: true,
+        items: 1,
+        autoplay: true,
+        navText: ["<i class = 'fas fa-arrow-left'></i>", "<i class = 'fas fa-arrow-right'></i>"]
+    });
 
+    // stop animation on resize
+    let resizeTimer;
+    $(window).resize(function(){
+        $(document.body).addClass('resize-animation-stopper');
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            $(document.body).removeClass('resize-animation-stopper');
+        }, 400);
+    });
+
+    $('.navbar-show-btn').click(function(){
+        $('.navbar-box').addClass('navbar-box-show');
+    });
+
+    $('.navbar-hide-btn').click(function(){
+        $('.navbar-box').removeClass("navbar-box-show");
+    })
+});
+function scrollToServices() {
+    var servicesSection = document.getElementById('services');
+    servicesSection.scrollIntoView({ behavior: 'smooth' });
+}
+$(document).ready(function(){
+    // Smooth scrolling for navbar links
+    $(".navbar-nav a").on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggler = document.querySelector('.navbar-show-btn');
+    const navbarHideBtn = document.querySelector('.navbar-hide-btn');
+    const navbarBox = document.querySelector('.navbar-box');
+
+    // Show mobile menu when hamburger icon is clicked
+    navbarToggler.addEventListener('click', function() {
+        navbarBox.classList.add('show');
+    });
+
+    // Hide mobile menu when close icon is clicked
+    navbarHideBtn.addEventListener('click', function() {
+        navbarBox.classList.remove('show');
+    });
+});
+
+</script>
 
 
 
